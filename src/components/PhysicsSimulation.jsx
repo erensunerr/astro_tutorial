@@ -22,6 +22,7 @@ function PhysicsSimulation() {
                 options: {
                     width: window.innerWidth,
                     height: window.innerHeight - 6*16,
+                    wireframes: false,
                 }
             });
 

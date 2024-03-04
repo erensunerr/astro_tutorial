@@ -1,18 +1,7 @@
 ---
-import Header from "../components/Header.astro";
-import "../styles/global.css";
 import PhysicsSimulation from "../components/PhysicsSimulation";
-
-console.log("Server")
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<html>
-<head></head>
-<body>
-    <Header />
+<BaseLayout title="Physics Simulation">
     <PhysicsSimulation client:load />
-</body>
-
-
-
-
-</html>
+</BaseLayout>

@@ -4,5 +4,23 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
+    <h1>{frontmatter.title}</h1>
+    <div class="tags-list">
+        {
+            frontmatter?.tags.map(
+                (tag) => <a class="tag" href=`/tags/${tag}`>{tag}</a>
+            )
+
+        }
+    </div>
     <slot />
 </BaseLayout>
+
+
+<style>
+    .tags-list {
+        gap: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>

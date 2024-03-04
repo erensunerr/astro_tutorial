@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const allPosts = await Astro.glob("./posts/*.md");
 ---
 <BaseLayout>
     <h1>A blog page</h1>
@@ -8,8 +11,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         as well as my journey learning Astro.
     </p>
     <ul>
-        <li><a href="/posts/post-1/">Post 1</a></li>
-        <li><a href="/posts/post-2/">Post 2</a></li>
-        <li><a href="/posts/post-3/">Post 3</a></li>
+        {
+            allPosts.map(
+                post => <BlogPost href={post.url} text={post.frontmatter.title} />
+            )
+        }
     </ul>
 </BaseLayout>
