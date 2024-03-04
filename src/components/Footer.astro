@@ -1,0 +1,46 @@
+---
+import Social from "./Social.astro"
+---
+
+<footer>
+    <p>Built with Astro</p>
+    <div class="social-group">
+        {
+            [{
+                platform: "linkedin",
+                username: "hello"
+            }, {
+                platform: "instagram",
+                username: "hello"
+            }].map((props) => <Social {...props} />)
+        }
+    </div>
+</footer>
+
+<style>
+    footer {
+        position: fixed;
+        left: 0;
+        right: 0;
+        padding: 4rem 0;
+        background: #202020;
+        bottom: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    footer > p {
+        color: #e0e0e0;
+    }
+
+    .social-group {
+        position: absolute;
+        top: 1rem;
+        right: 4rem;
+
+        display: flex;
+        gap: 1rem;
+    }
+
+</style>

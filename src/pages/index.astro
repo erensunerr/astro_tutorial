@@ -1,5 +1,8 @@
 ---
-
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 ---
 
 <html lang="en">
@@ -11,9 +14,18 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/blog">Blog</a>
+		<Header />
 		<h1>My Astro Site</h1>
+		<Footer />
+		<script>
+			document.querySelector('.hamburger').addEventListener('click', () => {
+				document.querySelector('.nav-links').classList.toggle('expanded');
+			});
+		</script>
 	</body>
 </html>
+
+
+<!--
+	Tutorial left at: https://docs.astro.build/en/tutorial/3-components/
+-->
