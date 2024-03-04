@@ -1,10 +1,5 @@
 ---
-import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-
-const pageTitle = "About Me";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const identity = {
     firstName: "Eren",
@@ -20,26 +15,8 @@ const fontWeight = "bold";
 const textTransform = "uppercase";
 ---
 
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-    <style define:vars={{skillColor, fontWeight, textTransform}}>
-        h1 {
-            color: purple;
-            font-size: 4rem;
-        }
-        .skill {
-            color: var(--skillColor);
-            font-weight: var(--fontWeight);
-            text-transform: var(--textTransform);
-        }
-    </style>
-</head>
-<body>
-    <Header />
-    <h1>{pageTitle}</h1>
+<BaseLayout title="About Me">
+    <h1>About Me</h1>
     <h2>... and my new Astro Site</h2>
     <p>
         I am working through Astro's introductory tutorial.
@@ -66,6 +43,15 @@ const textTransform = "uppercase";
             skills.map((skill) => <li class="skill">{skill}</li>)
         }
     </ul>
-    <Footer />
-</body>
-</html>
+    <style define:vars={{skillColor, fontWeight, textTransform}}>
+        h1 {
+            color: purple;
+            font-size: 4rem;
+        }
+        .skill {
+            color: var(--skillColor);
+            font-weight: var(--fontWeight);
+            text-transform: var(--textTransform);
+        }
+    </style>
+</BaseLayout>
