@@ -1,7 +1,7 @@
 ---
 title: "My Astro Adventure: A CS Major's Expedition into Physics Animation and Layout Design"
 author: "Eren"
-date: "2023-04-15"
+pubDate: 2022-07-15
 tags: ["astro", "CS", "Physics", "Animation"]
 layout: "../../layouts/MarkdownPostLayout.astro"
 ---
